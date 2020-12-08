@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jean-Christophe Fabre, jctophe.fabre@gmail.com">
+    <meta name="url" content="https://github.com/jctophefabre/mycraftedboard">
+
+    <link rel="icon" type="image/png" href="static/favicon.png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+
+    <link href='css/icons/sync.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/mycraftedboard.css" >
+
+    <script src="js/moment.js" ></script>
+    <script src="js/linkify.min.js" ></script>
+    <script src="js/linkify-html.min.js" ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <span class="navbar-brand mr-auto"><span id="navbar-title"></span>
+        <span id="pill-danger" class="badge badge-pill" style="display:none;">0</span>
+        <span id="pill-warning" class="badge badge-pill" style="display:none;">0</span>
+        <button id="refresh-manual" class="btn btn-light ml-3" onClick="window.location.href=window.location.href"><i class="text-mcb gg-sync"></i></button>
+        <span id="refresh-auto" class="align-middle" style="display:none;">auto-refresh<br/>enabled</span>
+      </span>
+      <span class="navbar-text align-middle" id="user-info">
+        <span id="user-avatar" class="align-middle" style="display:none;"></span>
+        <span id="user-initials" class="align-middle" style="display:none;"></span>
+        &nbsp;&nbsp;<span id="user-name" class="align-middle"></span>
+      </span>
+    </nav>
+    <div class="container" id="board">
+      <div class="row" id="tasks">
+      </div>
+    </div>
+    <script src="board.config.js" ></script>
+    <script src="board.tasks.js" ></script>
+    <script src="js/mycraftedboard.js" ></script>
+  </body>
+</html>

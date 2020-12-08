@@ -1,0 +1,126 @@
+:root {
+  --color-mcb : #77c425;
+  --color-darkblue : #2e466d;
+  --color-warning : orange;
+  --color-danger : red;
+}
+
+
+body {
+  background-color : #F0F0F0;
+}
+
+nav {
+  border-bottom : 1px solid lightgray;
+  margin-bottom : 15px;
+}
+
+.bg-mcb {
+  background-color: var(--color-mcb);
+}
+
+.text-mcb {
+  color: var(--color-mcb);
+}
+
+#refresh-manual {
+  cursor : pointer;
+  padding : 5px;
+}
+
+#refresh-auto {
+  font-size : 50%;
+  color : #aaa;
+}
+
+#user-avatar img {
+  border : 1px solid #aaa;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  height: 32px;
+  width: 32px;
+}
+
+#user-initials {
+  border : 2px solid var(--color-mcb);
+  color: var(--color-mcb);
+  height: 2rem;
+  width: 2rem;
+  padding : 5px;
+}
+
+#board {
+  max-width: 1344px;
+}
+
+#tasks .lane {
+  border : 1px solid lightgray;
+  margin : 10px;
+  padding : 0px;
+  padding-bottom : 50px;
+  background-color : white;
+}
+
+#tasks .lane h1 {
+  font-size : 120%;
+  padding : 10px;
+  background-color : grey;
+  color : white;
+  text-align : center;
+}
+
+#tasks .lane ul {
+  list-style-type: none;
+  padding-left : 0px;
+  padding-right : 0px;
+  margin : 0px;
+}
+
+#tasks .lane li {
+  padding : 15px;
+  margin : 0px;
+  border-bottom : 1px dashed lightgray;
+}
+
+#tasks .lane .tag {
+  background-color : lightgray;
+  color : white;
+  padding : 4px;
+  margin-right : 8px;
+  font-size : 70%;
+  border-radius : 4px;
+}
+
+#tasks span.date {
+  color : darkgrey;
+  padding : 4px;
+  margin-right : 8px;
+  font-size : 70%;
+  border-radius : 4px;
+  border : 1px solid darkgrey;
+}
+
+#tasks span.date-warning {
+  font-weight: bold;
+  color : var(--color-warning);
+}
+
+#tasks span.date-danger {
+  font-weight: bold;
+  color : var(--color-danger);
+}
+
+#pill-warning {
+  color : white;
+  background-color: var(--color-warning);
+  font-size: 60%;
+  vertical-align: middle;
+}
+
+#pill-danger {
+  color : white;
+  background-color: var(--color-danger);
+  font-size: 60%;
+  vertical-align: middle;
+}
