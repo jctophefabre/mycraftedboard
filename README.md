@@ -1,6 +1,6 @@
 # myCraftedBoard
 
-myCraftedBoard is a simple kanban-like board for managing tasks. It is a HTMS+JS application which runs locally in a browser (no server required, no tuning of browser needed).
+myCraftedBoard is a simple kanban-like board for managing tasks. It is a HTMS+JS application which runs locally in a browser, originally written for personal needs. No server is required, no specific configuration of browser is needed.
 
 It offers the following features
 
@@ -70,7 +70,9 @@ More detailed information on how to manage lanes and tasks are available in the 
 ## Development, License and acknowledgment
 
 myCraftedBoard is written and maintained by [Jean-Christophe Fabre](https://github.com/jctophefabre).  
-As myCraftedBoard has been written for personal needs, it is available "as-is" and is not an industry-standard product. Wrong syntax in data files or unexpected usage may lead to bad functioning.
+As myCraftedBoard was originally written for personal needs, it is available "as-is" and is not intended to be fail-safe.
+In particular, wrong syntax in JSON data files may lead to unexpected functioning. 
+Most of the time, it can be easily fixed by verifying the files correctness.
 
 
 ### License
