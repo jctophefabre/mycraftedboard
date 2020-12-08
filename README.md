@@ -12,6 +12,8 @@ It offers the following features
 * 🔄 optional automatic refresh
 * 🏠 data is stored locally
 
+<img src="https://github.com/jctophefabre/mycraftedboard/raw/master/assets/screenshot.png">
+
 
 ## Installation
 
@@ -56,7 +58,7 @@ The following example defines a task tagget for "Project X" and "Development", p
 ``` 
 Tasks can be moved from one lane to another using copy-paste in the file editor.
 
-More detailed information on how to manage lanes and tasks are available in the [board.tasks.js](https://github.com/jctophefabre/mycraftedboard/blob/master/board.config.js) example file.
+More detailed information on how to manage lanes and tasks are available in the [board.tasks.js](https://github.com/jctophefabre/mycraftedboard/blob/master/board.tasks.js) example file.
 
 
 ## Tips
