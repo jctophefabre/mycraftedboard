@@ -79,7 +79,7 @@ Most of the time, it can be easily fixed by verifying the files correctness.
 
 myCraftedBoard is available under the terms of the MIT license. See [LICENSE file](https://github.com/jctophefabre/mycraftedboard/blob/master/LICENSE).
 
-### Underlying frameworks
+### 3rd party frameworks
 
 myCraftedBoard relies on external frameworks which are bundled with the myCraftedBoard files:
 
