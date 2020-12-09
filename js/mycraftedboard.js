@@ -1,24 +1,27 @@
+"use strict";
+
 function createItem(content) {
   var tags = [];
-  const tagregex = /\[([^\]]*)\]/gm;
+  const tagRegex = /\[([^\]]*)\]/gm;
+  var m;
   do {
-    var m = tagregex.exec(content);
+     m = tagRegex.exec(content);
     if (m) {
       tags.push(m[1]);
     }
   } while (m);
 
   var deadline = "";
-  const dlregex = /\!(\d\d\d\d-\d\d-\d\d)/gm;
+  const dlRegex = /!(\d\d\d\d-\d\d-\d\d)/gm;
   do {
-    var m = dlregex.exec(content);
+    m = dlRegex.exec(content);
     if (m) {
       deadline = m[1];
     }
   } while (m);
 
-  var content = content.replace(tagregex,"");
-  var contentHtml = content.replace(dlregex,"");
+  content = content.replace(tagRegex,"");
+  var contentHtml = content.replace(dlRegex,"");
   contentHtml = contentHtml.trim();
 
   var deadlineHtml = "";
@@ -29,43 +32,46 @@ function createItem(content) {
 
     var dlStr = dlDate.format('DD/MM');
 
-    var issueclass = "";
+    var issueClass = "";
 
     if (daysDiff < config.daysbefore.danger) {
-      issueclass = " date-danger";
-      dangercount++;
+      issueClass = " date-danger";
+      dangerCount++;
     }
     else if (daysDiff < config.daysbefore.warning) {
-      issueclass = " date-warning";
-      warningcount++;
+      issueClass = " date-warning";
+      warningCount++;
     }
 
-    deadlineHtml += "<span class='date"+ issueclass +"'>" + dlStr + "</span>";
+    deadlineHtml += "<span class='date"+ issueClass +"'>" + dlStr + "</span>";
   }
 
   var tagsHtml = "";
-  for (var l in tags) {
-    var lparts = tags[l].split(':');
-    var lid = lparts[0];
-    if (lid in config.tags) {
-      var tagInfo = config.tags[lid];
-      var ltext = tagInfo.text;
-      if (lparts.length > 1) {
-        var ltext = lparts.slice(1,lparts.length).join('');
+  tags.forEach(element => {
+    let tagParts = element.split(":");
+    let tagKey = tagParts[0];
+    if (tagKey in config.tags) {
+      let tagInfo = config.tags[tagKey];
+      let tagText = tagInfo.text;
+      if (tagParts.length > 1) {
+        tagText = tagParts.slice(1,tagParts.length).join("");
       }
-      tagsHtml += "<span class='tag' style='background: "+tagInfo.color+"'>"+ltext+"</span>";
+      tagsHtml += "<span class='tag' style='background: "+tagInfo.color+"'>"+tagText+"</span>";
     }
-  }
+  });
   return linkifyHtml("<li>"+tagsHtml+deadlineHtml+contentHtml+"</li>");
 }
 
-// =========================
+
+// ##############################################################
+
 
 function createLane(title, color, items) {
   var itemsHtml = "";
-  for (i in items) {
-    itemsHtml+= createItem(items[i]);
-  }
+
+  items.forEach(element => {
+    itemsHtml+= createItem(element);
+  });
 
   var styleTxt = "";
 
@@ -78,15 +84,18 @@ function createLane(title, color, items) {
 }
 
 
-// =========================
-// =========================
+// ##############################################################
+// ##############################################################
 
 
-var warningcount = 0;
-var dangercount = 0;
+var warningCount = 0;
+var dangerCount = 0;
 
 
-document.title  = config.title + " | " + config.user.nickname;
+document.title  = config.title;
+if ("initials" in config.user && config.user.initials != "") {
+  document.title += " | " + config.user.initials;
+}
 
 
 if ("refresh" in config && config["refresh"] > 0) {
@@ -115,21 +124,20 @@ if ("avatar" in config.user && config.user.avatar != "") {
   userElem.removeChild(initialsElem);
 }
 
-for (var i in tasks) {
-  var lane = tasks[i];
+tasks.forEach(lane => {
   document.getElementById("tasks").innerHTML += createLane(lane.title,lane.color,lane.items);
-}
+});
 
-if (dangercount)
+if (dangerCount)
 {
-  var pill = document.getElementById("pill-danger");
-  pill.innerHTML = dangercount;
+  let pill = document.getElementById("pill-danger");
+  pill.innerHTML = dangerCount;
   pill.style.display = "inline-block";
 }
 
-if (warningcount)
+if (warningCount)
 {
-  var pill = document.getElementById("pill-warning");
-  pill.innerHTML = warningcount;
+  let pill = document.getElementById("pill-warning");
+  pill.innerHTML = warningCount;
   pill.style.display = "inline-block";
 }
