@@ -1,5 +1,6 @@
 "use strict";
 
+
 function createItem(content) {
   var tags = [];
   const tagRegex = /\[([^\]]*)\]/gm;
@@ -91,14 +92,36 @@ function createLane(title, color, items) {
 var warningCount = 0;
 var dangerCount = 0;
 
+if (typeof(config) === 'undefined') {
+  var config = {};
+}
+
+config = _.merge(
+  {
+    "title" : "myCraftedBoard",
+    "refresh" : 300,
+    "user" : {
+      "name" : "myCraftedUser",
+      "avatar" : "",
+      "initials" : "MY"
+    },
+    "daysbefore" : {
+      "warning" : 4,
+      "danger" : 2
+    },
+    "tags" : {}
+  },
+  config
+)
+
 
 document.title  = config.title;
-if ("initials" in config.user && config.user.initials != "") {
+if (config.user.initials != "") {
   document.title += " | " + config.user.initials;
 }
 
 
-if ("refresh" in config && config["refresh"] > 0) {
+if (config["refresh"] > 0) {
   document.getElementById("refresh-auto").style.display = "inline-block";
   window.setTimeout(function () {
     window.location.reload();
@@ -111,11 +134,11 @@ document.getElementById("user-name").innerHTML = config.user.name;
 var userElem = document.getElementById("user-info");
 var avatarElem = document.getElementById("user-avatar");
 var initialsElem = document.getElementById("user-initials");
-if ("avatar" in config.user && config.user.avatar != "") {
+if (config.user.avatar != "") {
   avatarElem.innerHTML = "<img src='"+config.user.avatar+"'/>";
   avatarElem.style.display = "";
   userElem.removeChild(initialsElem);
-} else if ("initials" in config.user && config.user.initials != "") {
+} else if (config.user.initials != "") {
   initialsElem.innerHTML = config.user.initials;
   initialsElem.style.display = "";
   userElem.removeChild(avatarElem);

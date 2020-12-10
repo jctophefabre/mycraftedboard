@@ -84,6 +84,7 @@ myCraftedBoard is available under the terms of the MIT license. See [LICENSE fil
 myCraftedBoard relies on external frameworks which are bundled with the myCraftedBoard files:
 
 * [Bootstrap 4.5.3](https://getbootstrap.com)
+* [Lodash 4.17.15](https://lodash.com/)
 * [Linkify 2.1.9](https://soapbox.github.io/linkifyjs/)
 * [Moment.js 2.24](https://momentjs.com/)
 
