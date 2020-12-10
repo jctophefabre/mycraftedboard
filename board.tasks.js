@@ -12,7 +12,7 @@ tasks = [
       "[team]!2020-03-20 Prepare sprint review",  // definition of a task, tagged with "team" and due to March 3rd of 2020
       "[personal]!2025-04-05 Buy gift for Lucia's birthday",
       "Have a beer with coworkers 🍻",
-      "[projectx][dev] Fix bug #42",
+      "[projectx][dev] Fix bug #42"
     ]
   },
   {
@@ -26,7 +26,7 @@ tasks = [
     "title" : "Done 😃",
     "color" : "green",
     "items" : [
-      "[projectx] Release version 2.2",
+      "[projectx] Release version 2.2"
     ]
   }
 ]

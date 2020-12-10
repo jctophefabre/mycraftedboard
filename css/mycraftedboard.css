@@ -3,16 +3,32 @@
   --color-darkblue : #2e466d;
   --color-warning : orange;
   --color-danger : red;
+  --footer-height : 30px;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
 
 body {
   background-color : #F0F0F0;
+  padding-bottom : var(--footer-height);
 }
 
 nav {
   border-bottom : 1px solid lightgray;
   margin-bottom : 15px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: var(--footer-height);
+  border-top : 1px solid lightgray;
+  margin-top : 30px;
+  font-size: 70%;
 }
 
 .bg-mcb {

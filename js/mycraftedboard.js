@@ -1,6 +1,9 @@
 "use strict";
 
 
+var VERSION = '0.3';
+
+
 function createItem(content) {
   var tags = [];
   const tagRegex = /\[([^\]]*)\]/gm;
@@ -121,13 +124,14 @@ if (config.user.initials != "") {
   document.title += " | " + config.user.initials;
 }
 
-
 if (config["refresh"] > 0) {
   document.getElementById("refresh-auto").style.display = "inline-block";
   window.setTimeout(function () {
     window.location.reload();
   }, config["refresh"]*1000);
 }
+
+document.getElementById("version").innerHTML = VERSION;
 
 document.getElementById("navbar-title").innerHTML = config.title;
 document.getElementById("user-name").innerHTML = config.user.name;
