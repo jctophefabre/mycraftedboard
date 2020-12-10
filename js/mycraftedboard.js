@@ -12,39 +12,39 @@ function createItem(content) {
     }
   } while (m);
 
-  var deadline = "";
-  const dlRegex = /!(\d\d\d\d-\d\d-\d\d)/gm;
+  var duedate = "";
+  const ddRegex = /!(\d\d\d\d-\d\d-\d\d)/gm;
   do {
-    m = dlRegex.exec(content);
+    m = ddRegex.exec(content);
     if (m) {
-      deadline = m[1];
+      duedate = m[1];
     }
   } while (m);
 
   content = content.replace(tagRegex,"");
-  var contentHtml = content.replace(dlRegex,"");
+  var contentHtml = content.replace(ddRegex,"");
   contentHtml = contentHtml.trim();
 
-  var deadlineHtml = "";
-  if (deadline) {
-    var dlDate = moment(deadline);
+  var duedateHtml = "";
+  if (duedate) {
+    var ddDate = moment(duedate);
     var curDate = moment();
-    var daysDiff = Math.ceil(moment.duration(dlDate-curDate).asDays());
+    var daysDiff = Math.ceil(moment.duration(ddDate-curDate).asDays());
 
-    var dlStr = dlDate.format('DD/MM');
+    var ddStr = ddDate.format(config.duedate.format);
 
     var issueClass = "";
 
-    if (daysDiff < config.daysbefore.danger) {
+    if (daysDiff < config.duedate.danger) {
       issueClass = " date-danger";
       dangerCount++;
     }
-    else if (daysDiff < config.daysbefore.warning) {
+    else if (daysDiff < config.duedate.warning) {
       issueClass = " date-warning";
       warningCount++;
     }
 
-    deadlineHtml += "<span class='date"+ issueClass +"'>" + dlStr + "</span>";
+    duedateHtml += "<span class='date"+ issueClass +"'>" + ddStr + "</span>";
   }
 
   var tagsHtml = "";
@@ -60,7 +60,7 @@ function createItem(content) {
       tagsHtml += "<span class='tag' style='background: "+tagInfo.color+"'>"+tagText+"</span>";
     }
   });
-  return linkifyHtml("<li>"+tagsHtml+deadlineHtml+contentHtml+"</li>");
+  return linkifyHtml("<li>"+tagsHtml+duedateHtml+contentHtml+"</li>");
 }
 
 
@@ -105,9 +105,10 @@ config = _.merge(
       "avatar" : "",
       "initials" : "MY"
     },
-    "daysbefore" : {
+    "duedate" : {
       "warning" : 4,
-      "danger" : 2
+      "danger" : 2,
+      "format" : "DD/MM"
     },
     "tags" : {}
   },

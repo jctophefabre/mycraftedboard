@@ -7,9 +7,10 @@ config = {
     "avatar" : "", // [optional] url of a local or remote avatar (e.g. Gravatar) 
     "initials" : "JD" // [optional] initials of the user. Not displayed if an avatar is provided
   },
-  "daysbefore" : {
-    "warning" : 4,
-    "danger" : 2
+  "duedate" : {
+    "warning" : 4, // number of days before the due date to mark it as "warning" 
+    "danger" : 2, // number of days before the due date to mark it as "danger"
+    "format" : "DD-MM" // format to apply to date display
   },
   "tags" : {  // definitions of tags that can be referenced in the tasks using their key (e.g. projectx, team, dev, ...)
     "projectx" : {
