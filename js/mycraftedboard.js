@@ -1,7 +1,7 @@
 "use strict";
 
 
-var VERSION = '0.4';
+var VERSION = '0.5';
 
 
 function createItem(content) {
@@ -89,6 +89,47 @@ function createLane(title, color, items) {
 
 
 // ##############################################################
+
+
+function buildBoard() {
+
+  let boarddiv = document.getElementById("board");
+
+  if (typeof(tasks) === 'undefined') {
+    let nodatadiv = document.createElement("div");
+    nodatadiv.className = "";
+    nodatadiv.classList.add("p-5");
+    nodatadiv.id="nodata";
+    nodatadiv.innerHTML = "<p class='text-center'>No task found!<br/><span style='font-size : 200%'>🏖</span><br/><br/>Check your <tt>board-tasks.js</tt> file</p>";
+    boarddiv.appendChild(nodatadiv);
+  } else {
+    let tasksdiv = document.createElement("div");
+    tasksdiv.className = "row";
+    tasksdiv.id="tasks";
+    boarddiv.appendChild(tasksdiv);
+
+    tasks.forEach(lane => {
+      tasksdiv.innerHTML += createLane(lane.title,lane.color,lane.items);
+    });
+
+    if (dangerCount)
+    {
+      let pill = document.getElementById("pill-danger");
+      pill.innerHTML = dangerCount;
+      pill.style.display = "inline-block";
+    }
+
+    if (warningCount)
+    {
+      let pill = document.getElementById("pill-warning");
+      pill.innerHTML = warningCount;
+      pill.style.display = "inline-block";
+    }
+  }
+}
+
+
+// ##############################################################
 // ##############################################################
 
 
@@ -152,20 +193,4 @@ if (config.user.avatar != "") {
   userElem.removeChild(initialsElem);
 }
 
-tasks.forEach(lane => {
-  document.getElementById("tasks").innerHTML += createLane(lane.title,lane.color,lane.items);
-});
-
-if (dangerCount)
-{
-  let pill = document.getElementById("pill-danger");
-  pill.innerHTML = dangerCount;
-  pill.style.display = "inline-block";
-}
-
-if (warningCount)
-{
-  let pill = document.getElementById("pill-warning");
-  pill.innerHTML = warningCount;
-  pill.style.display = "inline-block";
-}
+buildBoard();
