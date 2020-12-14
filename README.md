@@ -21,6 +21,10 @@ To install myCraftedBoard, you may either:
 * Download the [latest myCraftedBoard archive](https://github.com/jctophefabre/mycraftedboard/archive/master.zip) and uncompress it on your computer
 * Clone the [myCraftedBoard git repository](https://github.com/jctophefabre/mycraftedboard) on your computer
 
+When myCraftedBoard is installed for the first time, you may copy the configuration and tasks files to get a starting example:
+* copy board-config.sample.js to board-config.js
+* copy board-tasks.sample.js to board-tasks.js
+
 
 ## Usage
 
@@ -33,7 +37,7 @@ A configuration and a tasks list are provided as an example.
 
 ### Configuration
 
-To set up the configuration, you have to edit the board.config.js file.  
+To set up the configuration, you have to edit the board-config.js file.  
 
 You can configure:
 * the board title
@@ -42,11 +46,11 @@ You can configure:
 * the delays for alerts on planned tasks
 * the tags which will can used to classify tasks
 
-More detailed information on how to correctly configure the board are available in the [board.config.js](https://github.com/jctophefabre/mycraftedboard/blob/master/board.config.js) example file.
+More detailed information on how to correctly configure the board are available in the [board-config.sample.js](https://github.com/jctophefabre/mycraftedboard/blob/master/board-config.sample.js) example file.
 
 ### Tasks
 
-To manage the tasks, you have to edit the board.tasks.js file.  
+To manage the tasks, you have to edit the board-tasks.js file.  
 This files allows to define lanes (such as "Todo","In progress", "Done") and tasks in lanes.  
 
 A lane is a list of tasks.
@@ -58,12 +62,12 @@ The following example defines a task tagget for "Project X" and "Development", p
 ``` 
 Tasks can be moved from one lane to another using copy-paste in the file editor.
 
-More detailed information on how to manage lanes and tasks are available in the [board.tasks.js](https://github.com/jctophefabre/mycraftedboard/blob/master/board.tasks.js) example file.
+More detailed information on how to manage lanes and tasks are available in the [board-tasks.sample.js](https://github.com/jctophefabre/mycraftedboard/blob/master/board-tasks.sample.js) example file.
 
 
 ## Tips
 
-* To quickly access to the board.tasks.js file and edit the tasks, you can use the desktop search feature of your system or set up a shortcut on your desktop, task bar, ...
+* To quickly access to the board-tasks.js file and edit the tasks, you can use the desktop search feature of your system or set up a shortcut on your desktop, task bar, ...
 * To share a board with others people, you can store it in a network shared folder or a drive system such as Nextcloud, Dropbox, iCloud, ... as myCraftedBoard is only a matter of files!
 
 

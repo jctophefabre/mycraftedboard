@@ -1,2 +1,5 @@
 .*
 !.gitignore
+
+board-config.js
+board-tasks.js

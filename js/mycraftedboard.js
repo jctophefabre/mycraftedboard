@@ -1,7 +1,7 @@
 "use strict";
 
 
-var VERSION = '0.3';
+var VERSION = '0.4';
 
 
 function createItem(content) {
