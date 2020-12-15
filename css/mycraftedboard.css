@@ -70,7 +70,7 @@ footer {
   max-width: 1344px;
 }
 
-#tasks .lane {
+.tasks .lane {
   border : 1px solid lightgray;
   margin : 10px;
   padding : 0px;
@@ -78,7 +78,7 @@ footer {
   background-color : white;
 }
 
-#tasks .lane h1 {
+.tasks .lane h1 {
   font-size : 120%;
   padding : 10px;
   background-color : grey;
@@ -86,20 +86,20 @@ footer {
   text-align : center;
 }
 
-#tasks .lane ul {
+.tasks .lane ul {
   list-style-type: none;
   padding-left : 0px;
   padding-right : 0px;
   margin : 0px;
 }
 
-#tasks .lane li {
+.tasks .lane li {
   padding : 15px;
   margin : 0px;
   border-bottom : 1px dashed lightgray;
 }
 
-#tasks .lane .tag {
+.tasks .lane .tag {
   background-color : lightgray;
   color : white;
   padding : 4px;
@@ -108,7 +108,7 @@ footer {
   border-radius : 4px;
 }
 
-#tasks span.date {
+.tasks span.date {
   color : darkgrey;
   padding : 4px;
   margin-right : 8px;
@@ -117,24 +117,24 @@ footer {
   border : 1px solid darkgrey;
 }
 
-#tasks span.date-warning {
+.tasks span.date-warning {
   font-weight: bold;
   color : var(--color-warning);
 }
 
-#tasks span.date-danger {
+.tasks span.date-danger {
   font-weight: bold;
   color : var(--color-danger);
 }
 
-#pill-warning {
+.pill-warning {
   color : white;
   background-color: var(--color-warning);
   font-size: 60%;
   vertical-align: middle;
 }
 
-#pill-danger {
+.pill-danger {
   color : white;
   background-color: var(--color-danger);
   font-size: 60%;

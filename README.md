@@ -4,6 +4,7 @@ myCraftedBoard is a simple kanban-like board for managing tasks. It is a HTMS+JS
 
 It offers the following features
 
+* 🔢 single or multiple tabbed boards
 * 🗒 customizable board lanes
 * #️⃣ customizable tagging
 * 👩‍💻 customizable user/group 
