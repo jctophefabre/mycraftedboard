@@ -15,9 +15,9 @@ tasks = [
           "title" : "To Do",
           "color" : "red", // background color of the lane header
           "items" : [ 
-            "[team]!2020-03-20 Prepare sprint review",  // definition of a task, tagged with "team" and due to March 3rd of 2020
+            "[team]!2020-03-20 Prepare sprint review for all relevant members | Topics: tasks done, issues, feedback on progress and planning",  // definition of a task, tagged with "team" and due to March 3rd of 2020
             "Have a beer with coworkers 🍻",
-            "[projectx][dev] Fix bug #42"
+            "[projectx][dev] Fix bug #42 | Check interaction with feature #21"
           ]
         },
         {
@@ -66,4 +66,4 @@ tasks = [
       ]
     }
   ]
-  
+

@@ -140,3 +140,8 @@ footer {
   font-size: 60%;
   vertical-align: middle;
 }
+
+.detail {
+  font-size: 80%;
+  margin-left: 20px;
+}

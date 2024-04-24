@@ -63,7 +63,14 @@ function createItem(content, counters) {
       tagsHtml += "<span class='tag' style='background: "+tagInfo.color+"'>"+tagText+"</span>";
     }
   });
-  return linkifyHtml("<li>"+tagsHtml+duedateHtml+contentHtml+"</li>");
+
+  var splittingDetails = contentHtml.split(" | ");
+
+  if (splittingDetails.length > 1) {
+    return linkifyHtml("<li><details><summary>"+tagsHtml+duedateHtml+splittingDetails[0]+"</summary><div class=\"detail\">"+splittingDetails[1]+"</div></details></li>");
+  } else {
+    return linkifyHtml("<li>"+tagsHtml+duedateHtml+contentHtml+"</li>");
+  }
 }
 
 

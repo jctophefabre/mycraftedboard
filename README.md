@@ -55,12 +55,12 @@ To manage the tasks, you have to edit the board-tasks.js file.
 This files allows to define lanes (such as "Todo","In progress", "Done") and tasks in lanes.  
 
 A lane is a list of tasks.
-A task is a string formatted with optional tags, an optional planned date and a text.  
-The following example defines a task tagget for "Project X" and "Development", planned to be completed on "December 8th of 2020" and detailed with message "Fix bug #42".
+A task is a string formatted with optional tags, an optional planned date and a text. Optionally, details can be added after ` | ` sequence to create an expandable section.
+The following example defines a task tagget for "Project X" and "Development", planned to be completed on "December 8th of 2020" and detailed with message "Fix bug #42" with details "check interaction with feature #30".
 
 ```
-"[projectx][dev]!2020-12-08 Fix bug #42"
-``` 
+"[projectx][dev]!2020-12-08 Fix bug #42 | check interaction with feature #30"
+```
 Tasks can be moved from one lane to another using copy-paste in the file editor.
 
 More detailed information on how to manage lanes and tasks are available in the [board-tasks.sample.js](https://github.com/jctophefabre/mycraftedboard/blob/master/board-tasks.sample.js) example file.
